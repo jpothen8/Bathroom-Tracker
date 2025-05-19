@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import BathroomList from './BathroomList';
+import AdminDashboard from './AdminDashboard';
 
 const Dashboard = () => {
     const navigate = useNavigate();
@@ -36,11 +37,15 @@ const Dashboard = () => {
             <div className="dashboard-header">
                 <h1>Bathroom Status Tracker</h1>
                 <div className="user-info">
-                    <span>Welcome, {user.role === 'admin' ? 'Admin' : 'Student'}</span>
+                    <span>Welcome, {user.username}</span>
                     <button onClick={handleLogout}>Logout</button>
                 </div>
             </div>
-            <BathroomList />
+            {user.role === 'admin' ? (
+                <AdminDashboard />
+            ) : (
+                <BathroomList />
+            )}
         </div>
     );
 };
