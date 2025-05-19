@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
+  const [token, setToken] = useState(localStorage.getItem('token'));
+
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    const storedToken = localStorage.getItem('token');
+    if (storedUser && storedToken) {
+      setUser(storedUser);
+      setToken(storedToken);
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={user ? <Dashboard /> : <Login />} />
+          <Route path="/" element={<Login />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
