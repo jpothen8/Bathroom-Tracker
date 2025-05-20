@@ -79,7 +79,7 @@ const AdminDashboard = () => {
                                 <tr>
                                     <th>Name</th>
                                     <th>Floor</th>
-                                    <th>Gender</th>
+                                    <th>Sex</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
