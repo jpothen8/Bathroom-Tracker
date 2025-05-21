@@ -20,7 +20,7 @@ const AdminDashboard = () => {
 
     const fetchProblems = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/bathrooms', {
+            const response = await fetch('https://crispy-giggle-wjx7xr9r5rfv6gr-5000.app.github.dev/api/bathrooms', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -35,7 +35,7 @@ const AdminDashboard = () => {
 
     const resolveProblem = async (id) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/bathrooms/${id}`, {
+            const response = await fetch(`https://crispy-giggle-wjx7xr9r5rfv6gr-5000.app.github.dev/api/bathrooms/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

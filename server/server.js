@@ -58,7 +58,9 @@ const users = {
 // Login endpoint
 app.post('/api/login', (req, res) => {
     const { username, password } = req.body;
-    
+
+    console.log(`Login attempt for username: ${username}`);
+
     if (!users[username] || users[username].password !== password) {
         return res.status(401).json({ message: 'Invalid credentials' });
     }

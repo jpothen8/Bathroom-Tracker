@@ -17,7 +17,7 @@ const BathroomList = () => {
     const fetchBathrooms = async () => {
         try {
             const token = localStorage.getItem('token');
-            const url = `http://localhost:5000/api/bathrooms?gender=${selectedGender}&floor=${selectedFloor}`;
+            const url = `https://crispy-giggle-wjx7xr9r5rfv6gr-5000.app.github.dev/api/bathrooms?gender=${selectedGender}&floor=${selectedFloor}`;
             console.log('Fetching from URL:', url);
             console.log('Selected gender:', selectedGender);
             console.log('Selected floor:', selectedFloor);
@@ -41,7 +41,7 @@ const BathroomList = () => {
 
     const updateBathroomStatus = async (id, newStatus) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/bathrooms/${id}`, {
+            const response = await fetch(`https://crispy-giggle-wjx7xr9r5rfv6gr-5000.app.github.dev/api/bathrooms/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
