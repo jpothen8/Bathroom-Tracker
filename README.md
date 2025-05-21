@@ -18,7 +18,7 @@ A web application to track the status of bathrooms (working/needs repair).
 2. Install dependencies:
    ```bash
    # Install frontend dependencies
-   cd client
+   cd interface
    npm install
 
    # Install backend dependencies
@@ -32,7 +32,7 @@ A web application to track the status of bathrooms (working/needs repair).
    npm start
 
    # In a new terminal, start frontend
-   cd client
+   cd interface
    npm start
    ```
 
